@@ -1,0 +1,54 @@
+Arguments: 
+  /home/michael/.nvm/versions/node/v8.6.0/bin/node /usr/bin/yarn install
+
+PATH: 
+  /home/michael/bin:/home/michael/.local/bin:/home/michael/.nvm/versions/node/v8.6.0/bin:/home/michael/bin:/home/michael/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  0.27.5
+
+Node version: 
+  8.6.0
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "Nexter",
+    "version": "1.0.0",
+    "description": "Nexter webpage",
+    "main": "index.js",
+    "scripts": {
+      "watch:sass": "node-sass sass/main.scss css/style.css -w",
+      "devserver": "live-server",
+      "start": "npm-run-all --parallel devserver watch:sass",
+  
+      "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+      "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+      "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+      "build:css": "npm-run-all compile:sass prefix:css compress:css"
+    },
+    "author": "Jonas",
+    "license": "ISC",
+    "devDependencies": {
+      "autoprefixer": "^7.1.4",
+      "concat": "^1.0.3",
+      "node-sass": "^4.5.3",
+      "npm-run-all": "^4.1.1",
+      "postcss-cli": "^4.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/autoprefixer: ETIMEDOUT
+      at Timeout._onTimeout (/usr/lib/node_modules/yarn/node_modules/request/request.js:852:19)
+      at ontimeout (timers.js:469:11)
+      at tryOnTimeout (timers.js:304:5)
+      at Timer.listOnTimeout (timers.js:264:5)
